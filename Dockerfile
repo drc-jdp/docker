@@ -8,8 +8,8 @@ RUN mkdir actions-runner
 WORKDIR /home/ga/actions-runner
 
 RUN apt-get update
-RUN apt-get curl
-RUN apt-get vim
+RUN apt-get install curl
+RUN apt-get install vim
 
 RUN curl -O -L https://github.com/actions/runner/releases/download/v2.273.0/actions-runner-linux-x64-2.273.0.tar.gz
 RUN tar xzf ./actions-runner-linux-x64-2.273.0.tar.gz
