@@ -23,4 +23,6 @@ COPY boot.sh /bin
 RUN chown ga *
 RUN chown ga .
 
+RUN mkdir ../docker_images
+WORKDIR /home/ga/docker_images
 CMD ["/bin/bash", "/bin/boot.sh"]
