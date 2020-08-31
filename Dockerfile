@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+ARG USERNAME_PASSWD
+ENV USPD=${USERNAME_PASSWD}
 RUN useradd -m -s /bin/bash -d /home/ga ga
 RUN echo ga:ga | chpasswd
 
@@ -13,4 +15,4 @@ COPY boot.sh /bin
 
 RUN mkdir docker_images
 WORKDIR /home/docker_images
-CMD ["/bin/bash", "/bin/boot.sh"]
+CMD /bin/bash /bin/boot.sh ${USPD}
